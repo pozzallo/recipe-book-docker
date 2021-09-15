@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.variaS.recipebook.entity.User;
 
-//@CrossOrigin("http://localhost:9000")
 public interface UserRepository extends JpaRepository<User, Integer>{
 	
 	List<User> findByGoogleSub(@Param("google_sub") String googleSub);

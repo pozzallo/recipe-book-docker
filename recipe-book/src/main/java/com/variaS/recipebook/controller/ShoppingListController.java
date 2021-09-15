@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.variaS.recipebook.entity.ShoppingListItem;
 import com.variaS.recipebook.service.ShoppingListService;
 
-@CrossOrigin("http://localhost:9000")
+@CrossOrigin("http://localhost")
 @RestController
 @RequestMapping("api/shoppingList")
 public class ShoppingListController {

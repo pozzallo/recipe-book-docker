@@ -19,7 +19,7 @@ import com.variaS.recipebook.entity.User;
 import com.variaS.recipebook.service.RecipeService;
 import com.variaS.recipebook.service.UserService;
 
-@CrossOrigin("http://localhost:9000")
+@CrossOrigin("http://localhost")
 @RestController
 @RequestMapping("/api")
 public class UserController {
