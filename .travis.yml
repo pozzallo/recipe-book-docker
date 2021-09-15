@@ -20,3 +20,15 @@ after_success:
   - docker push pozzallo/mysql
   - docker push pozzallo/resource
   - docker push pozzallo/zuul
+
+deploy:
+   provider: elasticbeanstalk
+   region: 'us-east-2'
+   app: 'recipe-book'
+   env: 'Recipebook-env'
+   bucket_name: 'elasticbeanstalk-us-east-2-415501347369'
+   bucket_path: 'recipe-book'
+   on:
+     branch: master
+   access_key_id: $AWS_ACCESS_KEY
+   secret_access_key: $AWS_SECRET_KEY
