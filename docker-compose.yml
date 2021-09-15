@@ -40,4 +40,10 @@ services:
             SPRING_REDIS_HOST: redis
             SPRING_REDIS_PORT: 6379
             ZUUL_ROUTES_RESOURCE_URL: http://resource:8080
+    frontend:
+        depends_on: 
+            - ui-server
+        build: ./frontend
+        ports: 
+            - "80:80"
 
