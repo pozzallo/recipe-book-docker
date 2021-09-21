@@ -17,9 +17,7 @@ services:
     resource:
         depends_on:
             - db
-        image: pozzallo/resource
-        mem_limit: 128m
-        hostname: resource
+        build: ./recipe-book
         ports:
             - "8080:8080"
         environment:
@@ -28,10 +26,11 @@ services:
             SPRING_DATASOURCE_PASSWORD: varia123
             SPRING_REDIS_HOST: redis
             SPRING_REDIS_PORT: 6379
-    zuul:
-        image: pozzallo/zuul
-        mem_limit: 128m
-        hostname: zuul
+    ui-server:
+        depends_on:
+            - db
+            - redis
+        build: ./recipe-book-ui
         ports:
             - "9000:9000"
         environment: 
@@ -42,9 +41,9 @@ services:
             SPRING_REDIS_PORT: 6379
             ZUUL_ROUTES_RESOURCE_URL: http://resource:8080
     frontend:
-        image: pozzallo/frontend
-        mem_limit: 128m
-        hostname: frontend
+        depends_on: 
+            - ui-server
+        build: ./frontend
         ports: 
             - "80:80"
 

@@ -9,7 +9,6 @@ script:
 
 after_success:
   - docker build -t pozzallo/frontend ./frontend
-  - docker build -t pozzallo/mysql ./mysql
   - docker build -t pozzallo/resource ./recipe-book
   - docker build -t pozzallo/zuul ./recipe-book-ui
 
@@ -17,7 +16,6 @@ after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
   - docker push pozzallo/frontend
-  - docker push pozzallo/mysql
   - docker push pozzallo/resource
   - docker push pozzallo/zuul
 
