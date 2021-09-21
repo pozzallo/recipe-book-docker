@@ -22,8 +22,8 @@ after_success:
 deploy:
    provider: elasticbeanstalk
    region: 'us-east-2'
-   app: 'recipe-book2'
-   env: 'Recipebook2-env'
+   app: 'recipe-book'
+   env: 'Recipebook-env'
    bucket_name: 'elasticbeanstalk-us-east-2-415501347369'
    bucket_path: 'recipe-book2'
    on:
