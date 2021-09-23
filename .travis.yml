@@ -23,9 +23,9 @@ deploy:
    provider: elasticbeanstalk
    region: 'us-east-2'
    app: 'recipe-book'
-   env: 'Recipebook-env'
+   env: 'Recipebook-env-1'
    bucket_name: 'elasticbeanstalk-us-east-2-415501347369'
-   bucket_path: 'recipe-book2'
+   bucket_path: 'recipe-book3'
    on:
      branch: master
    access_key_id: $AWS_ACCESS_KEY
